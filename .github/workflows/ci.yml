@@ -22,7 +22,6 @@ env:
   ANGULAR_CLI_VERSION: 17
   CYCLONEDX_NPM_VERSION: '^1.12.0'
 jobs:
-  environment: Test
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -211,6 +210,7 @@ jobs:
 
   e2e:
     runs-on: ${{ matrix.os }}
+    environment: Test
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
